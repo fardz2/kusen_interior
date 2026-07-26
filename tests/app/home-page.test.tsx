@@ -4,7 +4,18 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 afterEach(cleanup);
 
 vi.mock("@/components/interactive/motion-hero", () => ({
-  MotionHero: ({ children }: { children: React.ReactNode }) => <>{children}</>,
+  MotionHero: ({ metadata, headline, body, ctaLabel, ctaHref }: {
+    metadata?: string[];
+    headline: [string, string];
+    body: string;
+    ctaLabel: string;
+    ctaHref: string;
+  }) => <>
+    {metadata?.map((item) => <span key={item}>{item}</span>)}
+    <h1>{headline.map((line) => <span key={line}>{line}</span>)}</h1>
+    <p>{body}</p>
+    <a href={ctaHref}>{ctaLabel}</a>
+  </>,
 }));
 vi.mock("@/components/interactive/motion/intro-overlay", () => ({ IntroOverlay: () => <div data-testid="intro-overlay" /> }));
 vi.mock("@/components/interactive/smooth-scroll", () => ({ SmoothScroll: () => null }));

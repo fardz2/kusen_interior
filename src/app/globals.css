@@ -25,7 +25,8 @@ button,a { outline-offset:4px; }
 .button-solid,.button-light { display:inline-flex; align-items:center; justify-content:space-between; gap:40px; min-width:220px; padding:18px 20px; text-transform:uppercase; font-size:11px; font-weight:700; letter-spacing:.1em; background:#000; color:#fff; border:1px solid #000; transition:background .2s,color .2s; }
 .button-solid:hover { background:#fff; color:#000; }
 .hero-drawing { position:absolute; right:2%; top:9%; width:34vw; height:73%; opacity:.16; }
-.hero-drawing i { position:absolute; display:block; border:1px solid #000; }
+.hero-drawing i { position:absolute; display:block; }
+.hero-drawing i>span { position:absolute; inset:0; display:block; border:1px solid #000; }
 .hero-drawing i:nth-child(1){inset:8% 16% 14% 8%;transform:skewY(-10deg)}
 .hero-drawing i:nth-child(2){inset:18% 2% 0 24%;transform:skewY(9deg)}
 .hero-drawing i:nth-child(3){left:42%;top:0;height:100%}
