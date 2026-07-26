@@ -25,4 +25,4 @@ Galeri tipografi monokrom: lapang, editorial, presisi. Light-first. Desain menol
 - Page sinkron. Static RSC, interactive client leaves, async server leaves terpisah.
 
 ## Motion
-Satu focal sequence: hero seperti lembar spesifikasi arsitektural yang terbuka melalui clip-path. Supporting motion hanya menu, marquee, dan feedback. Framer Motion dan Lenis wajib menghormati reduced motion.
+Architectural cinematic: intro panel singkat, hero mask/stagger, garis konstruksi, scroll reveal, portfolio panel wipe, process progress, dan CTA magnetic ringan. Semua gerak mengomunikasikan urutan atau struktur; tanpa cursor custom, scroll hijack, atau dekorasi acak. Framer Motion dan Lenis wajib menghormati reduced motion, touch, dan cleanup lifecycle.
