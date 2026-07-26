@@ -6,6 +6,7 @@ afterEach(cleanup);
 vi.mock("@/components/interactive/motion-hero", () => ({
   MotionHero: ({ children }: { children: React.ReactNode }) => <>{children}</>,
 }));
+vi.mock("@/components/interactive/motion/intro-overlay", () => ({ IntroOverlay: () => <div data-testid="intro-overlay" /> }));
 vi.mock("@/components/interactive/smooth-scroll", () => ({ SmoothScroll: () => null }));
 
 import Home from "@/app/page";
@@ -14,6 +15,7 @@ describe("Sahabat Alumunium landing", () => {
   it("menjelaskan layanan utama dan jalur konsultasi", () => {
     render(<Home />);
 
+    expect(screen.getByTestId("intro-overlay")).toBeTruthy();
     expect(screen.getByRole("heading", { level: 1, name: /ruang presisi/i })).toBeTruthy();
     expect(screen.getByRole("heading", { name: /kusen aluminium/i })).toBeTruthy();
     expect(screen.getByRole("heading", { name: /desain interior/i })).toBeTruthy();
