@@ -7,7 +7,8 @@ vi.mock("framer-motion", () => {
     const Tag = tag;
     return <Tag data-initial={JSON.stringify(initial)} data-animate={JSON.stringify(animate)} data-variants={JSON.stringify(variants)} data-transition={JSON.stringify(transition)} {...props}>{children}</Tag>;
   };
-  return { useReducedMotion: reducedMotionMock, motion: { div: element("div"), span: element("span") } };
+  const value = { set: vi.fn() };
+  return { useReducedMotion: reducedMotionMock, useMotionValue: () => value, useSpring: (item: unknown) => item, motion: { div: element("div"), span: element("span"), a: ({ children, style: _style, ...props }: React.ComponentProps<"a">) => <a {...props}>{children}</a> } };
 });
 import { MotionHero } from "@/components/interactive/motion-hero";
 

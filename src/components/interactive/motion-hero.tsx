@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+import { MagneticLink } from "@/components/interactive/motion/magnetic-link";
 
 type MotionHeroProps = {
   metadata: string[];
@@ -35,7 +36,7 @@ export function MotionHero({ metadata, headline, body, ctaLabel, ctaHref }: Moti
     </span>)}</h1>
     <motion.div className="hero-foot" data-testid="hero-foot" variants={rise} {...immediate}>
       <p>{body}</p>
-      <a className="button-solid" href={ctaHref}>{ctaLabel} <span aria-hidden>↗</span></a>
+      <MagneticLink className="button-solid" href={ctaHref}>{ctaLabel} <span aria-hidden>↗</span></MagneticLink>
     </motion.div>
     <div className="hero-drawing" aria-hidden>{[0, 1, 2, 3].map((item, index) => <i key={index} data-testid="hero-drawing-line"><motion.span data-testid="hero-drawing-scale" variants={line} {...immediate} style={{ originX: item % 2 ? 1 : 0 }}/></i>)}</div>
   </motion.div>;
