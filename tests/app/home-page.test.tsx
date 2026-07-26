@@ -8,7 +8,7 @@ vi.mock("@/components/interactive/motion-hero", () => ({
 }));
 vi.mock("@/components/interactive/smooth-scroll", () => ({ SmoothScroll: () => null }));
 
-import Home from "./page";
+import Home from "@/app/page";
 
 describe("Sahabat Alumunium landing", () => {
   it("menjelaskan layanan utama dan jalur konsultasi", () => {
