@@ -39,7 +39,12 @@ export function IntroOverlay() {
       transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
       onAnimationComplete={() => setVisible(false)}
     >
-      <strong className="text-sm uppercase tracking-[0.3em]">Sahabat Alumunium</strong>
+      <div className="intro-mark">
+        <span className="intro-line intro-line-x" />
+        <span className="intro-line intro-line-y" />
+        <strong>SA</strong>
+        <small>Sahabat Alumunium</small>
+      </div>
     </motion.div>
   );
 }

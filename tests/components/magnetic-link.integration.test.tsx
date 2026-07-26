@@ -19,8 +19,9 @@ describe("MagneticLink integration", () => {
       removeEventListener: vi.fn(),
     })));
     render(<><Hero/><Contact/></>);
-    const links = screen.getAllByRole("link", { name: /Mulai konsultasi/ });
-    expect(links[0].getAttribute("href")).toBe("#kontak"); expect(links[0].classList.contains("button-solid")).toBe(true);
-    expect(links[1].getAttribute("href")).toBe("mailto:halo@sahabatalumunium.id"); expect(links[1].classList.contains("button-light")).toBe(true);
+    const heroLink = screen.getByRole("link", { name: /Mulai konsultasi/ });
+    expect(heroLink.getAttribute("href")).toBe("#kontak"); expect(heroLink.classList.contains("button-solid")).toBe(true);
+    expect(screen.getByText("Kontak resmi segera tersedia")).toBeTruthy();
+    expect(screen.queryByRole("link", { name: /Kontak resmi segera tersedia/ })).toBeNull();
   });
 });

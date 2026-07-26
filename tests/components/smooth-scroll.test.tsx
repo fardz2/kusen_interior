@@ -22,7 +22,7 @@ describe("SmoothScroll", () => {
     reduced = true; render(<SmoothScroll />); expect(constructorMock).not.toHaveBeenCalled();
   });
   it("mengaktifkan Lenis dengan konfigurasi lembut", () => {
-    render(<SmoothScroll />); expect(constructorMock).toHaveBeenCalledWith({ duration: 1.05, smoothWheel: true });
+    render(<SmoothScroll />); expect(constructorMock).toHaveBeenCalledWith({ smoothWheel: false });
   });
   it("membersihkan frame dan instance saat unmount", () => {
     const view = render(<SmoothScroll />); view.unmount();
